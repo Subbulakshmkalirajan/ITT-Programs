@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h> 
+int find_nth_term(int n, int a0, int a1, int a2) {
+    if (n == 1) { // Base case: the 1st term
+        return a0;
+    } else if (n == 2) { // Base case: the 2nd term
+        return a1;
+    } else if (n == 3) { // Base case: the 3rd term
+        return a2;
+    } else { // Recursive case: for n > 3
+        return find_nth_term(n - 1, a0, a1, a2) + find_nth_term(n - 2, a0, a1, a2) + find_nth_term(n - 3, a0, a1, a2);
+    }
+}
+int main() {
+    int n, a0, a1, a2;
+    scanf("%d", &n);
+    scanf("%d %d %d", &a0, &a1, &a2);
+    int ans = find_nth_term(n, a0, a1, a2);
+    printf("%d\n", ans);
+    return 0;
+}
