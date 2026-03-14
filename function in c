@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+int max(int num1, int num2) {
+    return (num1 > num2) ? num1 : num2;
+}
+int max_of_four(int a, int b, int c, int d) {
+    int result = max(max(a, b), max(c, d));
+    return result;
+}
+int main() {
+    int a, b, c, d;
+    /* Read four integers from standard input */
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    /* Call the max_of_four function and store the result */
+    int ans = max_of_four(a, b, c, d);
+    /* Print the result to standard output */
+    printf("%d", ans);
+    return 0;
+}
+
