@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+
+int main() {
+    int a, b;
+    // Read input integers a and b
+    cin >> a >> b;
+
+    // Array of English representations for numbers 1 to 9
+    string numbers[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+    // Iterate through the inclusive interval [a, b]
+    for (int i = a; i <= b; i++) {
+        if (i >= 1 && i <= 9) {
+            // Print the English representation for numbers 1 to 9
+            cout << numbers[i - 1] << endl;
+        } else if (i % 2 == 0) {
+            // Print "even" for even numbers greater than 9
+            cout << "even" << endl;
+        } else {
+            // Print "odd" for odd numbers greater than 9
+            cout << "odd" << endl;
+        }
+    }
+
+    return 0;
+}
