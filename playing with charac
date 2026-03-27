@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    char ch;
+    char s[100]; // Max length for string
+    char sen[100]; // Max length for sentence
+
+    // Read a character
+    scanf("%c", &ch);
+    
+    // Read a string
+    scanf("%s", s);
+    
+    // Consume the newline character left by the previous scanf()
+    scanf("\n"); 
+    
+    // Read a sentence using scanset
+    scanf("%[^\n]%*c", sen); 
+
+    // Print the character
+    printf("%c\n", ch);
+    
+    // Print the string
+    printf("%s\n", s);
+    
+    // Print the sentence
+    printf("%s\n", sen);
+      
+    return 0;
+}
