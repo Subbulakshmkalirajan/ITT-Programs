@@ -1,0 +1,22 @@
+from itertools import product
+
+# Input: Read n and m
+n, m = map(int, input().split())
+
+# Input: Read the lists
+lists = []
+for _ in range(n):
+    lst = list(map(int, input().split()))[1:]  # Skip the first number, which is the size of the list
+    lists.append(lst)
+
+# Use itertools.product to generate all combinations
+combinations = product(*lists)
+
+# Calculate the maximum value of the function S
+max_value = 0
+for combination in combinations:
+    value = sum(x**2 for x in combination) % m
+    max_value = max(max_value, value)
+
+# Output the maximum value
+print(max_value)
